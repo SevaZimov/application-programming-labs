@@ -26,7 +26,7 @@ def pars_args()->tuple:
     except:
         raise SyntaxError("Arguments can not be blank")
 
-def img_downloader(_keyword,dir_path)->None:
+def img_downloader(_keyword : str,dir_path : str)->None:
     """
     Скачивает используя гугл 50 изображений по ключевому слову
     :param _keyword:
@@ -42,7 +42,7 @@ def img_downloader(_keyword,dir_path)->None:
     except:
         raise NotADirectoryError("Wrong directory to save images")
 
-def get_dir_files(dir_path)->list:
+def get_dir_files(dir_path : str)->list:
     """
     Находит названия всех файлов в папке
     :param dir_path:
@@ -60,7 +60,7 @@ def get_dir_files(dir_path)->list:
     except:
         raise NotADirectoryError("Wrong path to images")
 
-def create_note(note_path,files)->None:
+def create_note(note_path :str,files : list)->None:
     """
     Записывает и создаёт если требуется файл аннотацию
     содержащую абсолютный и относительный путь к каждому изображению
@@ -91,7 +91,7 @@ if __name__ == "__main__":
         keyword = arguments[0]
         save_dir_path = arguments[1]
         note_path = arguments[2]
-        "img_downloader(keyword,save_dir_path)"
+        img_downloader(keyword,save_dir_path)
         downloaded_files = get_dir_files(save_dir_path)
         create_note(note_path,downloaded_files)
         useless_iterator = ImgIterator(note_path)

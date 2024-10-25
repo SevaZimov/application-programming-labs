@@ -1,7 +1,7 @@
 import csv
 
 class ImgIterator:
-    def __init__(self,note_path):
+    def __init__(self,note_path : str):
         """
         записывает в поле data строки аннотации
         и в поле limit их количество
