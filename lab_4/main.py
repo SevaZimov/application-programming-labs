@@ -32,9 +32,8 @@ def get_height_width_depth(path:str)->tuple:
     Ширина, высота, глубина(количество каналов)
     """
     try:
-        img = cv2.imread(path,0)
-        height, width = img.shape[:2]
-        depth = len(img.shape)
+        img = cv2.imread(path)
+        height, width, depth= img.shape
         return height, width, depth
     except:
         raise OSError("Incorrect image path")
